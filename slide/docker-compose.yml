@@ -1,0 +1,10 @@
+services:
+  texlive:
+    container_name: slide
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ${PWD}/workspace:/workspace
+    tty: true
+    stdin_open: true

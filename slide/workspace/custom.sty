@@ -1,0 +1,62 @@
+\ProvidesPackage{custom}
+
+% --- パッケージ ---
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{booktabs}
+
+% --- 基本設定 ---
+\renewcommand{\baselinestretch}{1.5}
+
+% --- フォント設定 ---
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Sans CJK JP}
+\setCJKsansfont{Noto Sans CJK JP}
+
+% --- カスタムテーマ設定 ---
+\usetheme{Boadilla}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{itemize item}{-}
+\setbeamertemplate{itemize subitem}{-}
+\setbeamertemplate{navigation symbols}{}
+
+% --- タイトルページのカスタマイズ ---
+\newcommand{\customtitlepage}{
+    \begin{center}
+        \vspace{2.0em}
+        \Large
+        \textbf{\inserttitle} \\
+        \vspace{-1.0em}
+        \noindent\textcolor{blue!20}{\rule{0.7\linewidth}{1.5pt}} \\
+        \begin{center}
+            \footnotesize
+            \insertinstitute \\
+            \insertauthor \\
+            \insertdate
+        \end{center}
+    \end{center}
+}
+\defbeamertemplate*{title page}{custom}[1][]{
+    \customtitlepage
+}
+
+% --- フレームタイトルのカスタマイズ ---
+\setbeamerfont{frametitle}{size=\Large, series=\bfseries}
+\setbeamercolor{frametitle}{fg=normal text.fg}
+\addtobeamertemplate{frametitle}{}{
+    \vspace{-1.0em}
+    \noindent\textcolor{blue!20}{\hrule height 1.0pt}
+}
+
+% --- 目次のカスタマイズ ---
+\setbeamercolor{section in toc}{fg=normal text.fg}
+\setbeamertemplate{section in toc}[default]
+\AtBeginSection[]{
+\begin{frame}{Outline}
+    \tableofcontents[currentsection]
+\end{frame}
+}

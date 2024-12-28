@@ -1,0 +1,41 @@
+\documentclass[aspectratio=169, 10.5pt]{beamer}
+
+\usepackage{custom}
+
+\title[TITLE]{TITLE}
+\institute[XXXX XXXX Lab.]{XXXX XXXX Lab.}
+\author[Nanida Koreaki]{Nanida Koreaki}
+\date[XXXX XX, XXXX]{XXXX XX, XXXX}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+\section{Introduction}
+\input{./sections/1_Introduction.tex}
+
+\section{Preliminaries}
+\input{./sections/2_Preliminaries.tex}
+
+\section{Previous Method}
+\input{./sections/3_Previous.tex}
+
+\section{Proposed Method}
+\input{./sections/4_Proposed.tex}
+
+\section{Experiment}
+\input{./sections/5_Experiment.tex}
+
+\section{Conclusion}
+\input{./sections/6_Conclusion.tex}
+
+\setbeamertemplate{footline}{}
+\input{./sections/7_Appendix.tex}
+
+\end{document}

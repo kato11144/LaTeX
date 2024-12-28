@@ -1,0 +1,43 @@
+\ProvidesPackage{custom}
+
+% --- パッケージ ---
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{booktabs}
+
+% --- 基本設定 --
+\usepackage[orientation=portrait, size=a0, scale=1.4]{beamerposter}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+\renewcommand{\baselinestretch}{1.2}
+
+% --- フォント設定 ---
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Sans CJK JP}
+\setCJKsansfont{Noto Sans CJK JP}
+
+% --- カスタムテーマ設定 ---
+\usefonttheme{professionalfonts}
+\setbeamertemplate{itemize item}{-}
+\setbeamertemplate{itemize subitem}{-}
+
+% --- ヘッダーのカスタマイズ ---
+\setbeamertemplate{headline}{
+    \begin{center}
+        \Huge \textbf{\postertitle} \\
+        \vspace{0.5em}
+        \large \laboratory \ \authorname \ (指導教員 \supervisor 教授)
+    \end{center}
+    \vspace{1.0em}
+    \noindent\textcolor{blue!30}{\hrule height 12pt}
+}
+
+% --- ブロックのカスタマイズ ---
+\setbeamerfont{block title}{size=\LARGE, series=\bfseries}
+\setbeamerfont{block body}{size=\large}
+\setbeamercolor{block title}{fg=normal text.fg}
+\setbeamercolor{block body}{fg=normal text.fg}
+\setbeamertemplate{block end}{\end{beamercolorbox}\vspace{1.0em}}

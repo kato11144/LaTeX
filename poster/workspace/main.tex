@@ -1,0 +1,27 @@
+\documentclass{beamer}
+
+\usepackage{custom}
+
+\newcommand{\postertitle}{タイトル}
+\newcommand{\authorname}{なにだ これあき}
+\newcommand{\laboratory}{XXXXXX研究室}
+\newcommand{\supervisor}{XX XX}
+
+\begin{document}
+
+\begin{frame}[t]
+    \begin{columns}[t]
+        \begin{column}{0.5\textwidth}
+            \input{./sections/1_Introduction.tex}
+            \input{./sections/2_Preliminaries.tex}
+            \input{./sections/3_Previous.tex}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \input{./sections/4_Proposed.tex}
+            \input{./sections/5_Experiment.tex}
+            \input{./sections/6_Conclusion.tex}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\end{document}

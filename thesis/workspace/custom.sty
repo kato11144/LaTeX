@@ -1,0 +1,54 @@
+\ProvidesPackage{custom}
+
+% --- パッケージ ---
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[ruled, vlined, linesnumbered]{algorithm2e}
+
+% --- 基本設定 ---
+\usepackage[top=25truemm, bottom=25truemm, left=25truemm, right=25truemm]{geometry}
+\usepackage[backend=biber, style=numeric, sortcites=true, sorting=nyt]{biblatex}
+
+% --- タイトルページのカスタマイズ ---
+\newcommand{\customtitlepage}[7]{
+  \begin{titlepage}
+    \begin{center}\Large
+
+      \vspace*{1cm}
+      #1 ~~ 修士学位論文
+
+      \vspace{3cm}
+      題 ~ 目
+
+      \bigskip
+      {\LARGE
+        #2
+      }
+
+      \vspace{4cm}
+      報 ~ 告 ~ 者
+
+      \bigskip
+      #3
+
+      \smallskip
+      学籍番号 #4
+
+      \vspace{2cm}
+      #5
+
+      \vspace{3cm}
+      #6提出
+
+      \vspace{1cm}
+      指導教員 #7 教授
+
+    \end{center}
+  \end{titlepage}
+}

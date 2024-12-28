@@ -1,0 +1,10 @@
+services:
+  texlive:
+    container_name: thesis
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ${PWD}/workspace:/workspace
+    tty: true
+    stdin_open: true
