@@ -1,5 +1,8 @@
 \ProvidesPackage{custom}
 
+% --- 色の定義 ---
+\definecolor{ThemeColor}{rgb}{0.173, 0.243, 0.314}
+
 % --- パッケージ ---
 \usepackage{xcolor}
 \usepackage{amsmath}
@@ -18,10 +21,13 @@
 \setCJKsansfont{Noto Sans CJK JP}
 
 % --- カスタムテーマ設定 ---
-\usetheme{Boadilla}
+\usetheme{default}
 \usefonttheme{professionalfonts}
+
+% --- レイアウトのカスタマイズ ---
 \setbeamertemplate{itemize item}{-}
 \setbeamertemplate{itemize subitem}{-}
+\setbeamertemplate{footline}[frame number]
 \setbeamertemplate{navigation symbols}{}
 
 % --- タイトルページのカスタマイズ ---
@@ -31,7 +37,7 @@
         \Large
         \textbf{\inserttitle} \\
         \vspace{-1.0em}
-        \noindent\textcolor{blue!20}{\rule{0.7\linewidth}{1.5pt}} \\
+        \noindent\textcolor{ThemeColor!50}{\rule{0.7\linewidth}{1.5pt}} \\
         \begin{center}
             \footnotesize
             \insertinstitute \\
@@ -46,15 +52,10 @@
 
 % --- フレームタイトルのカスタマイズ ---
 \setbeamerfont{frametitle}{size=\Large, series=\bfseries}
-\setbeamercolor{frametitle}{fg=normal text.fg}
-\addtobeamertemplate{frametitle}{}{
-    \vspace{-1.0em}
-    \noindent\textcolor{blue!20}{\hrule height 1.0pt}
-}
+\setbeamercolor{frametitle}{fg=white, bg=ThemeColor}
 
 % --- 目次のカスタマイズ ---
 \setbeamercolor{section in toc}{fg=normal text.fg}
-\setbeamertemplate{section in toc}[default]
 \AtBeginSection[]{
 \begin{frame}{Outline}
     \tableofcontents[currentsection]
