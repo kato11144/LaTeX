@@ -2,10 +2,13 @@
 
 \usepackage{custom}
 
-\newcommand{\postertitle}{タイトル}
-\newcommand{\authorname}{なにだ これあき}
-\newcommand{\laboratory}{XXXXXX研究室}
-\newcommand{\supervisor}{XX XX}
+\title{タイトル}
+\institute{XXXXXX研究室}
+\author{なにだこれあき}
+\date{XXXX年XX月XX日}
+
+\newcommand{\supervisor}{XXXX}
+\newcommand{\conference}{XXXXXXXXXXX}
 
 \begin{document}
 
@@ -13,12 +16,24 @@
     \begin{columns}[t]
         \begin{column}{0.5\textwidth}
             \input{./sections/1_Introduction.tex}
+        \end{column}
+        \begin{column}{0.5\textwidth}
             \input{./sections/2_Preliminaries.tex}
+        \end{column}
+    \end{columns}
+    \begin{columns}[t]
+        \begin{column}{0.5\textwidth}
             \input{./sections/3_Previous.tex}
         \end{column}
         \begin{column}{0.5\textwidth}
             \input{./sections/4_Proposed.tex}
+        \end{column}
+    \end{columns}
+    \begin{columns}[t]
+        \begin{column}{0.5\textwidth}
             \input{./sections/5_Experiment.tex}
+        \end{column}
+        \begin{column}{0.5\textwidth}
             \input{./sections/6_Conclusion.tex}
         \end{column}
     \end{columns}

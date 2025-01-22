@@ -1,5 +1,8 @@
 \ProvidesPackage{custom}
 
+% --- 色の定義 ---
+\definecolor{ThemeColor}{rgb}{0.173, 0.243, 0.314}
+
 % --- パッケージ ---
 \usepackage{xcolor}
 \usepackage{amsmath}
@@ -9,9 +12,9 @@
 \usepackage{multirow}
 \usepackage{booktabs}
 
-% --- 基本設定 --
+% --- 基本設定 ---
 \usepackage[orientation=portrait, size=a0, scale=1.4]{beamerposter}
-\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+\geometry{top=0cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
 \renewcommand{\baselinestretch}{1.2}
 
 % --- フォント設定 ---
@@ -21,23 +24,61 @@
 
 % --- カスタムテーマ設定 ---
 \usefonttheme{professionalfonts}
+
+% --- レイアウトのカスタマイズ ---
 \setbeamertemplate{itemize item}{-}
 \setbeamertemplate{itemize subitem}{-}
+\setbeamertemplate{navigation symbols}{}
 
 % --- ヘッダーのカスタマイズ ---
+\setbeamerfont{headline}{size=\Huge, series=\bfseries}
+\setbeamercolor{headline}{fg=white, bg=ThemeColor}
+
 \setbeamertemplate{headline}{
-    \begin{center}
-        \Huge \textbf{\postertitle} \\
-        \vspace{0.5em}
-        \large \laboratory \ \authorname \ (指導教員 \supervisor 教授)
-    \end{center}
-    \vspace{1.0em}
-    \noindent\textcolor{blue!30}{\hrule height 12pt}
+    \begin{beamercolorbox}[wd=\paperwidth, dp=0.2em]{headline}
+        \begin{center}
+            \inserttitle \\
+            \vskip 0.4em
+            \large \insertinstitute \hspace{0.5em} \insertauthor \hspace{0.5em} (指導教員 \supervisor \ 教授)
+        \end{center}
+    \end{beamercolorbox}
+    \vskip -0.6em
+}
+
+% --- フッターのカスタマイズ ---
+\setbeamerfont{footline}{size=\small, series=\bfseries}
+\setbeamercolor{footline}{fg=white, bg=ThemeColor}
+
+\setbeamertemplate{footline}{
+    \begin{beamercolorbox}[wd=\paperwidth, dp=0.5em]{footline}
+        \begin{center}
+            \conference \hspace{1.0em}|\hspace{1.0em} \insertdate
+        \end{center}
+    \end{beamercolorbox}
 }
 
 % --- ブロックのカスタマイズ ---
 \setbeamerfont{block title}{size=\LARGE, series=\bfseries}
-\setbeamerfont{block body}{size=\large}
 \setbeamercolor{block title}{fg=normal text.fg}
+
+\setbeamerfont{block body}{size=\large, series=\mdseries}
 \setbeamercolor{block body}{fg=normal text.fg}
-\setbeamertemplate{block end}{\end{beamercolorbox}\vspace{1.0em}}
+
+\setbeamertemplate{block begin}{
+    \usebeamerfont{block title}
+    \begin{beamercolorbox}[wd=\textwidth]{block title}
+        \begin{center}
+            \insertblocktitle
+            \vskip -1.0em
+            \noindent\textcolor{ThemeColor!50}{\hrule height 6pt}
+        \end{center}
+    \end{beamercolorbox}
+    \usebeamerfont{block body}
+    \begin{beamercolorbox}[wd=\textwidth]{block body}
+        \begin{center}
+}
+\setbeamertemplate{block end}{
+        \end{center}
+    \end{beamercolorbox}
+    \vskip 0.5em
+}
