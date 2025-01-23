@@ -2,19 +2,19 @@
 
 \usepackage{custom}
 
-\newcommand{\fiscalyear}{令和X年度}
-\newcommand{\thesistitle}{タイトル}
-\newcommand{\authorname}{なにだ これあき}
-\newcommand{\studentID}{XXXXXXXX}
-\newcommand{\department}{XX大学大学院XXXXX研究科XXXXX専攻}
-\newcommand{\submissiondate}{令和X年XX月XX日}
-\newcommand{\supervisor}{XX XX}
-
 \addbibresource{ref.bib}
 
 \begin{document}
 
-\customtitlepage{\fiscalyear}{\thesistitle}{\authorname}{\studentID}{\department}{\submissiondate}{\supervisor}
+\customtitlepage{
+    year        = 令和XX年度,
+    title       = タイトル,
+    author      = なにだ これあき,
+    id          = XXXXXXXX,
+    department  = XX大学大学院XXXXX研究科XXXXX専攻,
+    date        = 令和XX年XX月XX日,
+    supervisor  = XX XX
+}
 
 \pagenumbering{roman}
 

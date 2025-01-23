@@ -15,40 +15,44 @@
 \usepackage[top=25truemm, bottom=25truemm, left=25truemm, right=25truemm]{geometry}
 \usepackage[backend=biber, style=numeric, sortcites=true, sorting=nyt]{biblatex}
 
+% --- キー設定 ---
+\usepackage{xkeyval}
+\define@key{titlepage}{year}{\def\titlepage@year{#1}}
+\define@key{titlepage}{title}{\def\titlepage@title{#1}}
+\define@key{titlepage}{author}{\def\titlepage@author{#1}}
+\define@key{titlepage}{id}{\def\titlepage@id{#1}}
+\define@key{titlepage}{department}{\def\titlepage@department{#1}}
+\define@key{titlepage}{date}{\def\titlepage@date{#1}}
+\define@key{titlepage}{supervisor}{\def\titlepage@supervisor{#1}}
+
 % --- タイトルページのカスタマイズ ---
-\newcommand{\customtitlepage}[7]{
-  \begin{titlepage}
-    \begin{center}\Large
+\newcommand{\customtitlepage}[1]{
+    \setkeys{titlepage}{#1}
+    \begin{titlepage}
+        \begin{center}
+            \vspace*{1.2cm}
 
-      \vspace*{1cm}
-      #1 ~~ 修士学位論文
+            % --- 年度 ---
+            {\Large \titlepage@year ~~ 修士学位論文} \\[3.2cm]
 
-      \vspace{3cm}
-      題 ~ 目
+            % --- タイトル ---
+            {\Large 題 ~ 目} \\[0.6cm]
+            {\LARGE \titlepage@title} \\[4.2cm]
 
-      \bigskip
-      {\LARGE
-        #2
-      }
+            % --- 報告者 ---
+            {\Large 報 ~ 告 ~ 者} \\[0.8cm]
+            {\Large \titlepage@author} \\[0.3cm]
+            {\Large 学籍番号 \titlepage@id} \\[2.2cm]
 
-      \vspace{4cm}
-      報 ~ 告 ~ 者
+            % --- 所属 ---
+            {\Large \titlepage@department} \\[3.0cm]
 
-      \bigskip
-      #3
+            % --- 提出日 ---
+            {\Large \titlepage@date 提出} \\[1.2cm]
 
-      \smallskip
-      学籍番号 #4
+            % --- 指導教員 ---
+            {\Large 指導教員 ~ \titlepage@supervisor ~ 教授}
 
-      \vspace{2cm}
-      #5
-
-      \vspace{3cm}
-      #6提出
-
-      \vspace{1cm}
-      指導教員 #7 教授
-
-    \end{center}
-  \end{titlepage}
+        \end{center}
+    \end{titlepage}
 }
