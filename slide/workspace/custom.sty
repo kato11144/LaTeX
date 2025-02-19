@@ -1,7 +1,7 @@
 \ProvidesPackage{custom}
 
 % --- 色の定義 ---
-\definecolor{ThemeColor}{rgb}{0.173, 0.243, 0.314}
+\definecolor{ThemeColor}{rgb}{0.273, 0.343, 0.414}
 
 % --- パッケージ ---
 \usepackage{xcolor}
@@ -33,10 +33,10 @@
 % --- タイトルページのカスタマイズ ---
 \newcommand{\customtitlepage}{
     \begin{center}
-        \vspace{2.0em}
+        \vskip 2.0em
         \Large
         \textbf{\inserttitle} \\
-        \vspace{-1.0em}
+        \vskip -1.0em
         \noindent\textcolor{ThemeColor!50}{\rule{0.7\linewidth}{1.5pt}} \\
         \begin{center}
             \footnotesize
@@ -53,6 +53,14 @@
 % --- フレームタイトルのカスタマイズ ---
 \setbeamerfont{frametitle}{size=\Large, series=\bfseries}
 \setbeamercolor{frametitle}{fg=white, bg=ThemeColor}
+\setbeamertemplate{frametitle}{
+    \nointerlineskip
+    \begin{beamercolorbox}[sep=0.3cm, ht=2.2em, wd=\paperwidth, leftskip=0.3cm]{frametitle}
+        \vskip -2.0ex
+        \strut\insertframetitle
+        \vskip -0.8ex
+    \end{beamercolorbox}
+}
 
 % --- 目次のカスタマイズ ---
 \setbeamercolor{section in toc}{fg=normal text.fg}
