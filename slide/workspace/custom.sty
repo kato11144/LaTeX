@@ -2,9 +2,15 @@
 
 % --- 色の定義 ---
 \definecolor{ThemeColor}{rgb}{0.273, 0.343, 0.414}
+\definecolor{TextColor}{rgb}{0.25, 0.25, 0.25}
+\definecolor{BackgroundColor}{rgb}{0.98, 0.98, 0.98}
+\definecolor{ItemColor}{rgb}{0.55, 0.55, 0.55}
+\definecolor{NormalColor}{rgb}{0.20, 0.20, 0.20}
+\definecolor{ExampleColor}{rgb}{0.20, 0.50, 0.20}
+\definecolor{AlertColor}{rgb}{0.50, 0.20, 0.20}
 
 % --- パッケージ ---
-\usepackage{xcolor}
+\usepackage{xeCJK}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{caption}
@@ -12,21 +18,39 @@
 \usepackage{multirow}
 \usepackage{booktabs}
 
-% --- 基本設定 ---
+% --- 行間の設定 ---
 \renewcommand{\baselinestretch}{1.5}
 
-% --- フォント設定 ---
-\usepackage{xeCJK}
+% --- フォントの設定 ---
 \setCJKmainfont{Noto Sans CJK JP}
 \setCJKsansfont{Noto Sans CJK JP}
 
-% --- カスタムテーマ設定 ---
+% --- カスタムテーマの設定 ---
 \usetheme{default}
 \usefonttheme{professionalfonts}
 
-% --- レイアウトのカスタマイズ ---
+% --- 色の設定 ---
+\setbeamercolor{normal text}{fg=TextColor}
+\setbeamercolor{background canvas}{bg=BackgroundColor}
+\setbeamercolor{frametitle}{fg=white, bg=ThemeColor}
+\setbeamercolor{section in toc}{fg=TextColor}
+\setbeamercolor{item}{fg=ItemColor}
+\setbeamercolor{block title}{fg=NormalColor, bg=ThemeColor!20}
+\setbeamercolor{block title example}{fg=ExampleColor, bg=ThemeColor!20}
+\setbeamercolor{block title alerted}{fg=AlertColor, bg=ThemeColor!20}
+\setbeamercolor{block body}{bg=ThemeColor!10}
+\setbeamercolor{block body example}{bg=ThemeColor!10}
+\setbeamercolor{block body alerted}{bg=ThemeColor!10}
+
+% --- シンボルの設定 ---
 \setbeamertemplate{itemize item}{-}
 \setbeamertemplate{itemize subitem}{-}
+
+% --- ブロックの設定 ---
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+% --- フッターの設定 ---
 \setbeamertemplate{footline}[frame number]
 \setbeamertemplate{navigation symbols}{}
 
@@ -52,7 +76,6 @@
 
 % --- フレームタイトルのカスタマイズ ---
 \setbeamerfont{frametitle}{size=\Large, series=\bfseries}
-\setbeamercolor{frametitle}{fg=white, bg=ThemeColor}
 \setbeamertemplate{frametitle}{
     \nointerlineskip
     \begin{beamercolorbox}[sep=0.3cm, ht=2.2em, wd=\paperwidth, leftskip=0.3cm]{frametitle}
@@ -63,7 +86,6 @@
 }
 
 % --- 目次のカスタマイズ ---
-\setbeamercolor{section in toc}{fg=normal text.fg}
 \AtBeginSection[]{
 \begin{frame}{Outline}
     \tableofcontents[currentsection]
