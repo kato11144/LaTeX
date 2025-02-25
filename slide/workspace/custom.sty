@@ -58,16 +58,12 @@
 \newcommand{\customtitlepage}{
     \begin{center}
         \vskip 2.0em
-        \Large
-        \textbf{\inserttitle} \\
-        \vskip -1.0em
-        \noindent\textcolor{ThemeColor!50}{\rule{0.7\linewidth}{1.5pt}} \\
-        \begin{center}
-            \footnotesize
-            \insertinstitute \\
-            \insertauthor \\
-            \insertdate
-        \end{center}
+        {\Large \textbf{\inserttitle}} \\
+        \vskip -0.5em
+        \noindent\textcolor{ThemeColor!50}{\rule{0.8\linewidth}{1.5pt}} \\
+        {\footnotesize \insertinstitute} \\
+        {\footnotesize \insertauthor} \\
+        {\footnotesize \insertdate}
     \end{center}
 }
 \defbeamertemplate*{title page}{custom}[1][]{
@@ -86,7 +82,7 @@
 
 % --- 目次のカスタマイズ ---
 \AtBeginSection[]{
-\begin{frame}{Outline}
-    \tableofcontents[currentsection]
-\end{frame}
+    \begin{frame}{Outline}
+        \tableofcontents[currentsection]
+    \end{frame}
 }
